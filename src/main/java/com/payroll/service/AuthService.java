@@ -16,7 +16,6 @@ public class AuthService {
         return PasswordUtil.verify(password, a.getPasswordHash());
     }
 
-
     public void createAdminIfNotExists(String username, String password) throws Exception {
         Admin a = adminDao.findByUsername(username);
         if (a == null) {

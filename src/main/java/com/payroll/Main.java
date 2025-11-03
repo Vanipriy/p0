@@ -1,12 +1,10 @@
 package com.payroll;
 
-
 import com.payroll.service.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Scanner;
-
 
 public class Main {
     private static AuthService auth = new AuthService();
@@ -16,7 +14,6 @@ public class Main {
     private static ReportService reportService = new ReportService();
 
     public static void main(String[] args) throws Exception {
-// Ensure default admin
         auth.createAdminIfNotExists("admin", "admin123");
 
 
@@ -24,7 +21,6 @@ public class Main {
         System.out.println("=== Payroll Backend CLI ===");
 
 
-// Simple admin login
         System.out.print("Enter admin username: ");
         String user = sc.nextLine();
         System.out.print("Enter admin password: ");
@@ -35,7 +31,6 @@ public class Main {
             System.out.println("Authentication failed. Exiting.");
             return;
         }
-
 
         boolean running = true;
         while (running) {

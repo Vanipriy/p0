@@ -7,7 +7,7 @@ import java.sql.*;
 
 public class SalaryDao {
 
-    // ✅ Check if salary already generated
+    //Check if salary already generated
     public boolean exists(int empId, String monthYear) throws Exception {
         String sql = "SELECT COUNT(*) FROM salary WHERE emp_id=? AND month_year=?";
         try (Connection c = DbUtil.getConnection(); PreparedStatement ps = c.prepareStatement(sql)) {
@@ -19,10 +19,10 @@ public class SalaryDao {
         }
     }
 
-    // ✅ Insert salary only if not exists
+    // Insert salary only if not exists
     public int create(SalaryRecord s) throws Exception {
 
-        // 🚫 Prevent duplicate salary entry
+        // Prevent duplicate salary entry
         if (exists(s.getEmpId(), s.getMonthYear())) {
             System.out.println("❌ Salary already generated for this employee & month!\n");
             return -1;

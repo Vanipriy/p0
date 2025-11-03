@@ -59,8 +59,6 @@ public class LeaveDao {
 
 
     public int countLeaveDaysForMonth(int empId, String monthYear) throws Exception {
-// Simplified: count approved leave days in the same monthYear (format: October-2025)
-// For brevity, we'll return the number of approved leave records in that month *NOT* exact days
         String[] parts = monthYear.split("-");
         String monthName = parts[0];
         String year = parts[1];
